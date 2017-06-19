@@ -1,7 +1,7 @@
 {
   "name": "ACE",
   "productName": "APEX Client Extension",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "APEX Client Extension",
   "main": "./background/main.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "sign-exe": "signcode ./out/ACE-win32-ia32/ACE.exe --cert ~/apex-client-extension.p12 --prompt --name 'APEX Client Extension' --url 'http://electron.atom.io'",
     "sign-installer": "signcode ./out/windows-installer/ACESetup.exe --cert ~/apex-client-extension.p12 --prompt --name 'APEX Client Extension' --url 'http://electron.atom.io'",
     "pack-mac": "electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=assets/mac/ACEbrowserLogo.icns --prune=true --out=out ",
-    "pack-win": "electron-packager . ACE --asar  --overwrite --platform=win32 --arch=ia32 --icon=assets/win/ACEbrowserLogo.ico --prune=true --out=out --version-string.CompanyName='FOEX GmbH' --version-string.FileDescription='APEX Client Extension' --version-string.ProductName='APEX Client Extension'",
+    "pack-win": "electron-packager . ACE --asar  --overwrite --platform=win32 --arch=ia32 --icon=assets/win/ACEbrowserLogo.ico --prune=true --out=out --win32metadata.CompanyName='FOEX GmbH' --win32metadata.FileDescription='APEX Client Extension' --win32metadata.ProductName='APEX Client Extension'",
     "pack-linux": "electron-packager . --asar --overwrite --platform=linux --arch=x64 --icon=assets/linux/ACEbrowserLogo.png --prune=true --out=out",
     "package": "npm run pack-mac && npm run pack-win && npm run pack-linux",
     "installer": "node ./script/installer.js",
@@ -36,10 +36,10 @@
   ],
   "homepage": "https://github.com/FOEXgmbh/apex-client-extension",
   "devDependencies": {
-    "electron-packager": "^7.7.0",
-    "electron-winstaller": "^2.5.2"
+    "electron-packager": "8.7.x",
+    "electron-winstaller": "2.6.x"
   },
   "dependencies": {
-    "electron": "^1.6.8"
+    "electron": "1.6.x"
   }
 }
